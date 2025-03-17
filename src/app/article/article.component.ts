@@ -8,9 +8,14 @@ import { Article } from './article.model';
 })
 export class ArticleComponent {
   @HostBinding('attr.class') cssClass = 'row';
-  @Input() articles: Article[];
+  @Input() article: Article;
 
   constructor() {
   }
+  voteUp(): boolean {
+    this.article.voteUp(); return false;
+    } voteDown(): boolean {
+    this.article.voteDown(); return false;
+    }
   
 }
