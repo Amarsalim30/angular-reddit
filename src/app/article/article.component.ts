@@ -1,5 +1,5 @@
-import { Component, HostBinding } from '@angular/core';
-
+import { Component, HostBinding, Input } from '@angular/core';
+import { Article } from './article.model';
 @Component({
   selector: 'app-article',
   imports: [],
@@ -8,21 +8,9 @@ import { Component, HostBinding } from '@angular/core';
 })
 export class ArticleComponent {
   @HostBinding('attr.class') cssClass = 'row';
-  votes: number;
-  title: string;
-  link: string;
-  voteUp(): boolean {
-    this.votes += 1;
-    return false;
-  }
-  voteDown(): boolean {
-    this.votes -= 1;
-    return false;
-  }
-  constructor() {
-    this.title = 'Angular 2';
-    this.link = 'http://angular.io';
-    this.votes = 10;
-  }
+  @Input() articles: Article[];
 
+  constructor() {
+  }
+  
 }
