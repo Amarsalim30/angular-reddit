@@ -10,11 +10,13 @@ export class ArticleComponent {
   @HostBinding('attr.class') cssClass = 'row';
   @Input() article: Article;
 
-  constructor() {
+  constructor(Article ar) {
+    this.article=article;
   }
   voteUp(): boolean {
     this.article.voteUp(); return false;
-    } voteDown(): boolean {
+    } 
+  voteDown(): boolean {
     this.article.voteDown(); return false;
     }
   
