@@ -1,10 +1,10 @@
 export class Article {
-    Title: string;
-    Link: string;
+    title: string;
+    link: string;
     votes: number;
     constructor(title: string, link: string, votes?: number) {
-        this.Title = title;
-        this.Link = link;
+        this.title = title;
+        this.link = link;
         this.votes = votes || 0;
     }
     voteUp(): void {
@@ -18,7 +18,7 @@ export class Article {
          try
           {
             // e.g. http://foo.com/path/to/bar
-            const domainAndPath: string = this.Link.split('//')[1];
+            const domainAndPath: string = this.link.split('//')[1];
             // e.g. foo.com/path/to/bar
             return domainAndPath.split('/')[0]; 
         }

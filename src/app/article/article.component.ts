@@ -1,4 +1,4 @@
-import { Component, HostBinding, input, Input } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 import { Article } from './article.model';
 @Component({
   selector: 'app-article',
@@ -12,15 +12,13 @@ export class ArticleComponent {
   @Input()
   article!: Article;
 
-  constructor() {
-
-
-  }
   voteUp(): boolean {
-    this.article.voteUp(); return false;
+    this.article.voteUp(); 
+    return false;
     } 
   voteDown(): boolean {
-    this.article.voteDown(); return false;
+    this.article.voteDown();
+    return false;
     }
   
 }
